@@ -3,7 +3,7 @@ import React from 'react';
 const Wishlist = () => {
     return (
         <div>
-            <h1>Wishlist</h1>
+            <h1 className="header">Wishlist</h1>
         </div>
     )
 }

@@ -1,0 +1,35 @@
+
+  .sidebar {
+    display: flex;
+    background-color: #53565A;
+    margin-top: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  .sidebar-list-styling {
+    padding-left: 50px;
+    padding-top: 15px;
+    width: 20%;
+    background-color: #53565A;
+    color: white;
+  }
+  
+  .sidebar-list a {
+    color: white;
+    padding: 0;
+  }
+  
+  .sidebar-route {
+    flex: 1;
+    padding: '00px';
+  }
+  
+  .header {
+    margin-top: 0.5em!important;
+    text-align: center;
+    background-color: #53565A;
+    color: white;
+  }

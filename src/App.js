@@ -4,7 +4,7 @@ import './App.css';
 import Auth from './components/auth/Auth';
 import SideBar from './components/site/Sidebar';
 import { BrowserRouter as Router } from 'react-router-dom';
-
+import './css/main.css';
 
 function App() {
 
