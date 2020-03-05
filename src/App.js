@@ -2,7 +2,9 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Auth from './components/auth/Auth';
-import Collection from './components/site/Collection';
+import SideBar from './components/site/Sidebar';
+import { BrowserRouter as Router } from 'react-router-dom';
+
 
 function App() {
 
@@ -27,14 +29,17 @@ function App() {
 
   const protectedViews = () => {
     return(sessionToken === localStorage.getItem('token') ? 
-    <Collection 
-      clickLogout={clearToken} 
-      token={sessionToken} />
+    <div>
+        <Router>
+          <SideBar clickLogout={clearToken} token={sessionToken}/>
+        </Router>
+    </div>
     : <Auth updateToken={updateToken} />)
   }
 
   return (
     <div className="App">
+      
       {protectedViews()}
     </div>
   );

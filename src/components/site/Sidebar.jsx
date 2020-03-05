@@ -1,14 +1,16 @@
 import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
 import {Route, Link, Switch} from 'react-router-dom';
 import Collection from './Collection';
 import Search from './Search';
 import Wishlist from './Wishlist';
+import {Button} from 'reactstrap';
 
-const SideBar = () => (
+const SideBar = (props) => (
     <div className="sidebar">
         <div className="sidebar-list-styling">
             <ul className="sidebar-list list-unstyled">
-                <li>My Records</li>
+                <li className= "navbar-brand">My Records</li>
                 <li><Link to="/collection">Collection</Link></li>
                 <li><Link to="/search">Search</Link></li>
                 <li><Link to="/wishlist">Wishlist</Link></li>
@@ -21,6 +23,7 @@ const SideBar = () => (
                 <Route exact path="/wishlist"><Wishlist /></Route>
             </Switch>
         </div>
+        <Button className="logout-btn" onClick={props.clickLogout}>LOG OUT</Button>
     </div>
 )
 
