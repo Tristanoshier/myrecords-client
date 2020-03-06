@@ -1,7 +1,6 @@
 
   .sidebar {
     display: flex;
-    background-color: #53565A;
     margin-top: 0;
   }
   
@@ -13,12 +12,11 @@
     padding-left: 50px;
     padding-top: 15px;
     width: 20%;
-    background-color: #53565A;
-    color: white;
+    color: black;
   }
   
   .sidebar-list a {
-    color: white;
+    color: black;
     padding: 0;
   }
   
@@ -30,6 +28,5 @@
   .header {
     margin-top: 0.5em!important;
     text-align: center;
-    background-color: #53565A;
-    color: white;
+    color: black;
   }

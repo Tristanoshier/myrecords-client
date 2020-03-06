@@ -18,12 +18,12 @@ const SideBar = (props) => (
         </div>
         <div className= "sidebar-route">
             <Switch>
-                <Route exact path="/collection"><Collection /></Route>
+                <Route exact path="/collection"><Collection token={props.token} /></Route>
                 <Route exact path="/search"><Search /></Route>
                 <Route exact path="/wishlist"><Wishlist /></Route>
             </Switch>
         </div>
-        <Button className="logout-btn" onClick={props.clickLogout}>LOG OUT</Button>
+        <Button className="bg-dark" onClick={props.clickLogout}>LOG OUT</Button>
     </div>
 )
 
