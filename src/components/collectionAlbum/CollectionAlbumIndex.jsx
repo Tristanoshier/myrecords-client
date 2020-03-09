@@ -3,9 +3,11 @@ import {Container, Row, Col} from 'reactstrap';
 import CollectionAlbumCreate from './CollectionAlbumCreate';
 import CollectionAlbumTable from './CollectionAlbumTable';
 import CollectionAlbumEdit from './CollectionAlbumEdit';
+import CollectionSearch from './CollectionSearch';
 
 const CollectionAlbumIndex = (props) => {
     const [collectionAlbums, setCollectionAlbums] = useState([]);
+    const [filteredAlbums, setFilteredAlbums] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [albumUpdate, setAlbumUpdate] = useState({});
 
@@ -42,15 +44,25 @@ const CollectionAlbumIndex = (props) => {
     return (
         <Container>
             <Row>
-                <Col md="6">
-                    <CollectionAlbumCreate fetchCollectionAlbums={fetchCollectionAlbums} token={props.token} />
+                <Col md="12">
+                    <CollectionAlbumCreate 
+                    fetchCollectionAlbums={fetchCollectionAlbums} token={props.token} />
                 </Col>
-                <Col md="6">
-                    <CollectionAlbumTable collectionAlbums={collectionAlbums} 
+            </Row>
+            <br />
+            <br /> 
+            <Row>
+                <Col md= "12">
+                    <CollectionSearch setFilteredAlbums={setFilteredAlbums} filteredAlbums={filteredAlbums} setCollectionAlbums ={setCollectionAlbums} collectionAlbums={collectionAlbums} token={props.token}/>
+                </Col>
+                <Col md="12">
+                    <CollectionAlbumTable 
+                    collectionAlbums={collectionAlbums} 
                     editUpdateCollectionAlbum={editUpdateCollectionAlbum} 
                     updateOn={updateOn} 
                     fetchCollectionAlbums={fetchCollectionAlbums}
-                    token={props.token} />
+                    token={props.token}
+                    filteredAlbums={filteredAlbums} />
                 </Col>
                 {updateActive ? <CollectionAlbumEdit albumUpdate={albumUpdate} updateOff={updateOff}
                 token={props.token} fetchCollectionAlbums={fetchCollectionAlbums} /> : <></>}

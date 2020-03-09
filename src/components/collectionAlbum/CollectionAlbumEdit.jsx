@@ -7,7 +7,7 @@ const CollectionAlbumEdit = (props) => {
     const [editYear, setEditYear] = useState(props.albumUpdate.year);
 
     const collectionAlbumUpdate = () => {
-        fetch(`http://localhost:3001/album/collection/update/${props.albumUpdate.name}`, {
+        fetch(`http://localhost:3001/album/collection/update/${props.albumUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({name: editName, artist: editArtist, year: editYear}),
             headers: new Headers({

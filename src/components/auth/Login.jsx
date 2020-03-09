@@ -20,7 +20,7 @@ const Login = (props) => {
     return (
         <div>
             <h1>Login</h1>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} autoComplete="off">
                 <FormGroup>
                     <Label htmlFor="email">Email:</Label>
                     <Input onChange= {e => setEmail(e.target.value)} name= "email" value={email} />

@@ -3,7 +3,7 @@ import {Table, Button} from 'reactstrap';
 
 const CollectionAlbumTable = (props) => {
     const deleteCollectionAlbum = (collectionAlbum) => {
-        fetch(`http://localhost:3001/album/collection/delete/${collectionAlbum.name}`, {
+        fetch(`http://localhost:3001/album/collection/delete/${collectionAlbum.id}`, {
             method: 'DELETE',
             headers: new Headers ({
                 'Content-Type' : 'application/json',
@@ -13,8 +13,10 @@ const CollectionAlbumTable = (props) => {
     }
 
     const collectionAlbumMapper = () => {
-        console.log(props.collectionAlbums)
-        return props.collectionAlbums.map((collectionAlbum, index) => {
+        let albums;
+        props.filteredAlbums.length === 0 ? albums = props.collectionAlbums : albums = props.filteredAlbums;
+
+        return albums.map((collectionAlbum, index) => {
             return (
                 <tr key={index}>
                     <td>{collectionAlbum.name}</td>
