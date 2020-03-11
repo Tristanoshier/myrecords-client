@@ -10,7 +10,10 @@ const Auth = (props) => {
         <Container>
           {isLogin ? <Login updateToken={props.updateToken} /> : <Signup updateToken={props.updateToken} />}
           <br />
-          <Button onClick= {() => setIsLogin(!isLogin)}>toggle</Button>
+       
+          <Button onClick= {() => setIsLogin(!isLogin)}>
+            {isLogin ? 'Sign up here!': 'Login here!'}
+          </Button>
         </Container>
     )
 }

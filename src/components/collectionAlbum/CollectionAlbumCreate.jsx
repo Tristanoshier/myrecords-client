@@ -8,26 +8,31 @@ const CollectionAlbumCreate = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        fetch("http://localhost:3001/album/collection/create", {
-            method: 'POST',
-            body: JSON.stringify({name: name, artist: artist, year: year}),
-            headers: new Headers({
-                'Content-Type': 'application/json',
-                'Authorization': props.token
+        //add multer
+        if (name && artist && year){
+            fetch("http://localhost:3001/album/collection/create", {
+                method: 'POST',
+                body: JSON.stringify({name: name, artist: artist, year: year}),
+                headers: new Headers({
+                    'Content-Type': 'application/json',
+                    'Authorization': props.token
+                })
+            }).then(res => res.json())
+            .then(() => {
+                setName('');
+                setArtist('');
+                setYear('');
+                props.fetchCollectionAlbums();
             })
-        }).then(res => res.json())
-        .then(() => {
-            setName('');
-            setArtist('');
-            setYear('');
-            props.fetchCollectionAlbums();
-        })
+        }else {
+            alert('Please fill out all fields')
+        }   
     }
 
     return (
         <>
             <h3>Add Album</h3>
-            <Form onSubmit={handleSubmit}>
+            <Form onSubmit={handleSubmit} autoComplete="off">
                 <FormGroup>
                     <Label htmlFor="name">Name:</Label>
                     <Input name="name" value={name} onChange={e => setName(e.target.value)} />

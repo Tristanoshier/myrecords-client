@@ -7,6 +7,7 @@ const Login = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        if(email && password){
         fetch("http://localhost:3001/user/login", {
             method: 'POST',
             body: JSON.stringify({email: email, password: password}),
@@ -15,6 +16,9 @@ const Login = (props) => {
             })
         }).then(response => response.json())
         .then(data => props.updateToken(data.sessionToken));
+        }else{
+            alert('incorrect email or password')
+        }   
     }
 
     return (

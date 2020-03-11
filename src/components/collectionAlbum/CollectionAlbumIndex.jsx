@@ -45,6 +45,11 @@ const CollectionAlbumIndex = (props) => {
         <Container>
             <Row>
                 <Col md="12">
+                    <h1>Collection</h1>
+                    <hr />
+                    <br />
+                </Col>
+                <Col md="12">
                     <CollectionAlbumCreate 
                     fetchCollectionAlbums={fetchCollectionAlbums} token={props.token} />
                 </Col>

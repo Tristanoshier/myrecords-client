@@ -9,6 +9,7 @@ const Signup = (props) => {
 
     let handleSubmit = (event) => {
         event.preventDefault();
+        if(firstname && lastname && email && password){
         fetch('http://localhost:3001/user/signup', {
             method: 'POST',
             body: JSON.stringify({firstname: firstname, lastname: lastname, email: email, password: password}),
@@ -18,6 +19,9 @@ const Signup = (props) => {
         })
         .then(response => response.json())
         .then(data => props.updateToken(data.sessionToken))
+        }else{
+            alert('Please fill out all fields')
+        }
     }
 
     return (

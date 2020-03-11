@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {Route, Link, Switch} from 'react-router-dom';
 import Collection from './Collection';
 import Wishlist from './Wishlist';
-import {Button} from 'reactstrap';
 
 const SideBar = (props) => (
     <div className="sidebar">
@@ -20,7 +19,7 @@ const SideBar = (props) => (
                 <Route exact path="/wishlist"><Wishlist /></Route>
             </Switch>
         </div>
-        <Button className="bg-dark" onClick={props.clickLogout}>LOG OUT</Button>
+       
     </div>
 )
 

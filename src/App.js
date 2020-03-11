@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css';
 import Auth from './components/auth/Auth';
-import SideBar from './components/site/Sidebar';
+import Home from './components/site/Home';
 import { BrowserRouter as Router } from 'react-router-dom';
 import './css/main.css';
 
@@ -31,7 +31,7 @@ function App() {
     return(sessionToken === localStorage.getItem('token') ? 
     <div>
         <Router>
-          <SideBar clickLogout={clearToken} token={sessionToken}/>
+          <Home clickLogout={clearToken} token={sessionToken}/>
         </Router>
     </div>
     : <Auth updateToken={updateToken} />)

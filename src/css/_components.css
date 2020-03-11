@@ -1,0 +1,29 @@
+  .modal-close {
+   background: white;
+   color: grey;
+   border: none;
+   margin-left: 325px;
+   font-weight: bolder;
+
+  }
+
+  .bg-img {
+    background-color: black
+  }
+
+  .card-deck .card{
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .card-style {
+    max-width: 200px;
+  }
+
+  .display-box {
+    height: 50vh;
+    overflow: scroll;
+  }
+
+  

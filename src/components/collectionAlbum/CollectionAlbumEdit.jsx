@@ -23,7 +23,7 @@ const CollectionAlbumEdit = (props) => {
     return (
         <>
         <Modal isOpen={true}>
-            <ModalHeader>Edit Album</ModalHeader>
+            <ModalHeader>Edit Album <Button className="modal-close" onClick={collectionAlbumUpdate}>X</Button></ModalHeader>
             <ModalBody >
                 <Form onSubmit={collectionAlbumUpdate}>
                     <FormGroup>

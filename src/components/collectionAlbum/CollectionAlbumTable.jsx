@@ -1,5 +1,5 @@
 import React from 'react';
-import {Table, Button} from 'reactstrap';
+import {Container,Col, Row, Button, Card, CardBody, CardTitle, CardSubtitle, CardImg, CardDeck} from 'reactstrap';
 
 const CollectionAlbumTable = (props) => {
     const deleteCollectionAlbum = (collectionAlbum) => {
@@ -18,37 +18,28 @@ const CollectionAlbumTable = (props) => {
 
         return albums.map((collectionAlbum, index) => {
             return (
-                <tr key={index}>
-                    <td>{collectionAlbum.name}</td>
-                    <td>{collectionAlbum.artist}</td>
-                    <td>{collectionAlbum.year}</td>
-                    <td>
-                        <Button className="bg-dark" onClick={() => {props.editUpdateCollectionAlbum(collectionAlbum); props.updateOn()}}>Update</Button>
-                        <br />
-                        <br />
-                        <Button color="danger" onClick={() => {deleteCollectionAlbum(collectionAlbum)}}>Delete</Button>
-                    </td>
-                </tr>
+                <div key={index}>
+                <Card>
+                    {/* <CardImg top width="100%" src="" alt="Card image cap" /> */}
+                    <CardBody>
+                    <CardTitle>{collectionAlbum.name}</CardTitle>
+                    <CardSubtitle>{collectionAlbum.artist}</CardSubtitle>
+                    <CardSubtitle>{collectionAlbum.year}</CardSubtitle>
+                    <Button className="bg-dark" onClick={() => {props.editUpdateCollectionAlbum(collectionAlbum); props.updateOn()}}>Update</Button>
+                    <Button color="danger" onClick={() => {deleteCollectionAlbum(collectionAlbum)}}>Delete</Button> 
+                    </CardBody>
+                </Card>
+                
+                </div>
             )
         })
     }
     return (
-        <>
-        <h3>Albums</h3>
-        <hr />
-        <Table striped>
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Artist</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
+        <div className= "card-deck display-box">
+            <CardDeck>
                 {collectionAlbumMapper()}
-            </tbody>
-        </Table>
-        </>
+            </CardDeck>
+        </div> 
     )
 }
 
