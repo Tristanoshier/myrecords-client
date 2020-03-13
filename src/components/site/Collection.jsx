@@ -3,8 +3,8 @@ import CollectionAlbumIndex from '../collectionAlbum/CollectionAlbumIndex';
 
 const Collection = (props) => {
     return (
-        <div>
-            <CollectionAlbumIndex token={props.token}/>
+        <div className="bg">
+            <CollectionAlbumIndex token={props.token} />
         </div>
     )
 }

@@ -1,18 +1,21 @@
 import React, {useState} from 'react';
-import {Button, Form, FormGroup, Label, Input} from 'reactstrap';
+import {Button, Form, FormGroup, Label, Input, ModalBody, Modal, ModalHeader} from 'reactstrap';
+import { CirclePicker } from 'react-color';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const CollectionAlbumCreate = (props) => {
     const [name, setName] = useState('');
     const [artist, setArtist] = useState('');
     const [year, setYear] = useState('');
+    const [backgroundColor, setBackgroundColor] = useState('#000000')
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        //add multer
         if (name && artist && year){
             fetch("http://localhost:3001/album/collection/create", {
                 method: 'POST',
-                body: JSON.stringify({name: name, artist: artist, year: year}),
+                body: JSON.stringify({name: name, artist: artist, year: year, color: backgroundColor}),
                 headers: new Headers({
                     'Content-Type': 'application/json',
                     'Authorization': props.token
@@ -23,15 +26,22 @@ const CollectionAlbumCreate = (props) => {
                 setArtist('');
                 setYear('');
                 props.fetchCollectionAlbums();
+                props.createOff();
             })
         }else {
             alert('Please fill out all fields')
         }   
     }
 
+    const closeCreateModal = () => {
+        props.createOff();
+    }
+
     return (
         <>
-            <h3>Add Album</h3>
+        <Modal isOpen={true}>
+            <ModalHeader>Add Album<FontAwesomeIcon size="lg" icon={faTimes} className="modal-close update-btn" onClick={closeCreateModal} /></ModalHeader>
+            <ModalBody >
             <Form onSubmit={handleSubmit} autoComplete="off">
                 <FormGroup>
                     <Label htmlFor="name">Name:</Label>
@@ -45,8 +55,14 @@ const CollectionAlbumCreate = (props) => {
                     <Label htmlFor="year">Year:</Label>
                     <Input name="year" value={year} onChange={e => setYear(e.target.value)} />
                 </FormGroup>
-                <Button className="bg-dark" type="submit">Add</Button>
+                <FormGroup>
+                    <Label htmlFor="color">Color:</Label>
+                    <CirclePicker backgroundColor={backgroundColor} onChangeComplete={(color)=> setBackgroundColor(color.hex)} />
+                </FormGroup>
+                <Button type="submit">Add</Button>
             </Form>
+            </ModalBody>
+        </Modal>
         </>
     )
 }

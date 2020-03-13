@@ -1,5 +1,7 @@
 import React, {useState} from 'react';
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import {Form, FormGroup, Input, Button, Row, Col, Container} from 'reactstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons';
 
 const Signup = (props) => {
     const [firstname, setFirstname] = useState('');
@@ -10,15 +12,15 @@ const Signup = (props) => {
     let handleSubmit = (event) => {
         event.preventDefault();
         if(firstname && lastname && email && password){
-        fetch('http://localhost:3001/user/signup', {
-            method: 'POST',
-            body: JSON.stringify({firstname: firstname, lastname: lastname, email: email, password: password}),
-            headers: new Headers({
-                'Content-Type' : 'application/json'
+            fetch('http://localhost:3001/user/signup', {
+                method: 'POST',
+                body: JSON.stringify({firstname: firstname, lastname: lastname, email: email, password: password}),
+                headers: new Headers({
+                    'Content-Type' : 'application/json'
+                })
             })
-        })
-        .then(response => response.json())
-        .then(data => props.updateToken(data.sessionToken))
+            .then(response => response.json())
+            .then(data => props.updateToken(data.sessionToken))
         }else{
             alert('Please fill out all fields')
         }
@@ -26,26 +28,38 @@ const Signup = (props) => {
 
     return (
         <div>
-            <h1>Sign Up</h1>
-            <Form onSubmit={handleSubmit} autoComplete="off">
-                <FormGroup>
-                    <Label htmlFor="firstname">First Name:</Label>
-                    <Input onChange={e => setFirstname(e.target.value)} name="firstname" value={firstname} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="lastname">Last Name:</Label>
-                    <Input onChange={e => setLastname(e.target.value)} name="lastname" value={lastname} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="email">Email:</Label>
-                    <Input onChange={e => setEmail(e.target.value)} name="email" value={email} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="password">Password:</Label>
-                    <Input onChange={e => setPassword(e.target.value)} name="password" value={password} />
-                </FormGroup>
-                <Button type="submit">Signup</Button>
-            </Form>
+            <Container>
+                <Row>
+                    <Col className="auth-left" md="6">
+                    <h1 className="jumbo-title-signup">MyRec{<FontAwesomeIcon size="xs" icon={faRecordVinyl}></FontAwesomeIcon>}rds</h1>
+                        <Form className="auth-form" onSubmit={handleSubmit} autoComplete="off">
+                            <FormGroup>
+                                <Input onChange={e => setFirstname(e.target.value)} name="firstname" value={firstname} placeholder="First Name" />
+                            </FormGroup>
+                            <br />
+                            <FormGroup>
+                                <Input onChange={e => setLastname(e.target.value)} name="lastname" value={lastname} placeholder="Last Name" />
+                            </FormGroup>
+                            <br />
+                            <FormGroup>
+                                <Input onChange={e => setEmail(e.target.value)} name="email" value={email} placeholder="Email" />
+                            </FormGroup>
+                            <br />
+                            <FormGroup>
+                                <Input onChange={e => setPassword(e.target.value)} name="password" value={password} placeholder="Password" />
+                            </FormGroup>
+                            <br />
+                            <Button id= "auth-btn" type="submit">Signup</Button>
+                            <br />
+                            <br />
+                            <p className="auth-switch" onClick= {() => props.setIsLogin(!props.isLogin)}>
+                            {props.isLogin ? "Don't have an account? Sign up here." : "Already have an account? Login here."}
+                            </p>
+                        </Form>
+                    </Col>
+                    <Col className="bg-image" md="6"></Col>
+                </Row>
+            </Container>
         </div>
     )
 }

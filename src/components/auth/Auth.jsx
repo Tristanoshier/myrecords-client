@@ -7,13 +7,10 @@ const Auth = (props) => {
     const [isLogin, setIsLogin] = useState(true);
 
     return (
-        <Container>
-          {isLogin ? <Login updateToken={props.updateToken} /> : <Signup updateToken={props.updateToken} />}
-          <br />
-       
-          <Button onClick= {() => setIsLogin(!isLogin)}>
-            {isLogin ? 'Sign up here!': 'Login here!'}
-          </Button>
+        <Container style={{margin: 0}}>
+          {isLogin ? 
+          <Login isLogin={isLogin} setIsLogin={setIsLogin} updateToken={props.updateToken} /> :
+          <Signup isLogin={isLogin} setIsLogin={setIsLogin}updateToken={props.updateToken} />}
         </Container>
     )
 }

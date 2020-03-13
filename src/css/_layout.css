@@ -1,4 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
 
+#body {
+  background-color: black;
+}
+.bg {
+  background-color: black;
+}
+.bg-image {
+  background: url(../assets/records2.jpeg) bottom;
+  filter: saturate(130%);
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container {
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.auth-left {
+  background-color: black;
+  color: white;
+  max-height: 100vh;
+}
+  
   .sidebar {
     display: flex;
     margin-top: 0;
@@ -9,24 +36,18 @@
   }
   
   .sidebar-list-styling {
-    padding-left: 50px;
-    padding-top: 15px;
-    width: 20%;
-    color: black;
+    width: 10%;
+    background-color: black;
+    color: white;
+    text-align: center;
   }
   
   .sidebar-list a {
-    color: black;
+    color: white;
     padding: 0;
   }
   
   .sidebar-route {
     flex: 1;
     padding: '00px';
-  }
-  
-  .header {
-    margin-top: 0.5em!important;
-    text-align: center;
-    color: black;
   }

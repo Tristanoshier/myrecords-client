@@ -1,5 +1,10 @@
 import React from 'react';
-import {Container,Col, Row, Button, Card, CardBody, CardTitle, CardSubtitle, CardImg, CardDeck} from 'reactstrap';
+import {Card, CardBody, CardTitle, CardSubtitle, CardDeck, CardHeader} from 'reactstrap';
+import { CirclePicker } from 'react-color';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {faPencilAlt} from '@fortawesome/free-solid-svg-icons';
+
 
 const CollectionAlbumTable = (props) => {
     const deleteCollectionAlbum = (collectionAlbum) => {
@@ -17,19 +22,20 @@ const CollectionAlbumTable = (props) => {
         props.filteredAlbums.length === 0 ? albums = props.collectionAlbums : albums = props.filteredAlbums;
 
         return albums.map((collectionAlbum, index) => {
+            console.log(collectionAlbum)
             return (
                 <div key={index}>
                 <Card>
-                    {/* <CardImg top width="100%" src="" alt="Card image cap" /> */}
+                    <CardHeader style={{backgroundColor: collectionAlbum.color}} id="card-header"></CardHeader>
                     <CardBody>
                     <CardTitle>{collectionAlbum.name}</CardTitle>
                     <CardSubtitle>{collectionAlbum.artist}</CardSubtitle>
                     <CardSubtitle>{collectionAlbum.year}</CardSubtitle>
-                    <Button className="bg-dark" onClick={() => {props.editUpdateCollectionAlbum(collectionAlbum); props.updateOn()}}>Update</Button>
-                    <Button color="danger" onClick={() => {deleteCollectionAlbum(collectionAlbum)}}>Delete</Button> 
+                    <br></br>
+                    <FontAwesomeIcon size="lg" className="update-btn" icon={faPencilAlt} onClick={() => {props.editUpdateCollectionAlbum(collectionAlbum); props.updateOn()}}/>
+                    <FontAwesomeIcon size="lg" className="delete-btn" icon={faTrash} onClick={() => {deleteCollectionAlbum(collectionAlbum)}}/>
                     </CardBody>
                 </Card>
-                
                 </div>
             )
         })

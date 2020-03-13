@@ -10,6 +10,9 @@ const CollectionAlbumIndex = (props) => {
     const [filteredAlbums, setFilteredAlbums] = useState([]);
     const [updateActive, setUpdateActive] = useState(false);
     const [albumUpdate, setAlbumUpdate] = useState({});
+    const [createActive, setCreateActive] = useState(false);
+    const [albumCreate, setAlbumCreate] = useState({});
+    const [backgroundColor, setBackgroundColor] = useState('#000000');
 
     const fetchCollectionAlbums = () => {
         fetch("http://localhost:3001/album/collection/find", {
@@ -20,13 +23,16 @@ const CollectionAlbumIndex = (props) => {
             })
         }).then(res => res.json())
         .then((albumData) => {
-            console.log(albumData)
             setCollectionAlbums(albumData.collectionAlbums)
         })
     }
 
     const editUpdateCollectionAlbum = (collectionAlbum) => {
         setAlbumUpdate(collectionAlbum);
+    }
+
+    const editCreateCollectionAlbum = (collectionAlbum) => {
+        setAlbumCreate(collectionAlbum);
     }
 
     const updateOn = () => {
@@ -37,6 +43,14 @@ const CollectionAlbumIndex = (props) => {
         setUpdateActive(false);
     }
 
+    const createOn =() => {
+        setCreateActive(true);
+    }
+    
+    const createOff = () => {
+        setCreateActive(false)
+    }
+
     useEffect(() => {
         fetchCollectionAlbums();
     }, []);
@@ -45,23 +59,37 @@ const CollectionAlbumIndex = (props) => {
         <Container>
             <Row>
                 <Col md="12">
-                    <h1>Collection</h1>
+                    <h1 className="main-header">Collection</h1>
                     <hr />
                     <br />
                 </Col>
-                <Col md="12">
-                    <CollectionAlbumCreate 
-                    fetchCollectionAlbums={fetchCollectionAlbums} token={props.token} />
-                </Col>
             </Row>
-            <br />
             <br /> 
             <Row>
                 <Col md= "12">
-                    <CollectionSearch setFilteredAlbums={setFilteredAlbums} filteredAlbums={filteredAlbums} setCollectionAlbums ={setCollectionAlbums} collectionAlbums={collectionAlbums} token={props.token}/>
+                    <CollectionSearch 
+                    editCreateCollectionAlbum={editCreateCollectionAlbum}
+                    createOn={createOn}
+                    setFilteredAlbums={setFilteredAlbums} 
+                    filteredAlbums={filteredAlbums} 
+                    setCollectionAlbums ={setCollectionAlbums} 
+                    collectionAlbums={collectionAlbums} 
+                    token={props.token}/>
                 </Col>
+                {createActive ? 
+                <CollectionAlbumCreate 
+                backgroundColor={backgroundColor} 
+                setBackgroundColor={setBackgroundColor} 
+                albumCreate={albumCreate} 
+                createOff={createOff} 
+                fetchCollectionAlbums={fetchCollectionAlbums} 
+                token={props.token} /> 
+                : <></>}
+
                 <Col md="12">
                     <CollectionAlbumTable 
+                    backgroundColor={backgroundColor}
+                    setBackgroundColor={setBackgroundColor}
                     collectionAlbums={collectionAlbums} 
                     editUpdateCollectionAlbum={editUpdateCollectionAlbum} 
                     updateOn={updateOn} 
@@ -69,8 +97,15 @@ const CollectionAlbumIndex = (props) => {
                     token={props.token}
                     filteredAlbums={filteredAlbums} />
                 </Col>
-                {updateActive ? <CollectionAlbumEdit albumUpdate={albumUpdate} updateOff={updateOff}
-                token={props.token} fetchCollectionAlbums={fetchCollectionAlbums} /> : <></>}
+                {updateActive ?
+                <CollectionAlbumEdit 
+                backgroundColor={backgroundColor} 
+                setBackgroundColor={setBackgroundColor} 
+                albumUpdate={albumUpdate} 
+                updateOff={updateOff}
+                token={props.token} 
+                fetchCollectionAlbums={fetchCollectionAlbums} /> 
+                : <></>}
             </Row>
         </Container>
     )
