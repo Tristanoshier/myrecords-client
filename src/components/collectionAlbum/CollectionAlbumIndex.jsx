@@ -4,6 +4,7 @@ import CollectionAlbumCreate from './CollectionAlbumCreate';
 import CollectionAlbumTable from './CollectionAlbumTable';
 import CollectionAlbumEdit from './CollectionAlbumEdit';
 import CollectionSearch from './CollectionSearch';
+import APIURL from '../../helpers/environment';
 
 const CollectionAlbumIndex = (props) => {
     const [collectionAlbums, setCollectionAlbums] = useState([]);
@@ -15,7 +16,7 @@ const CollectionAlbumIndex = (props) => {
     const [backgroundColor, setBackgroundColor] = useState('#000000');
 
     const fetchCollectionAlbums = () => {
-        fetch("http://localhost:3001/album/collection/find", {
+        fetch(`${APIURL}/album/collection/find`, {
             method: 'GET',
             headers: new Headers({
                 "Content-Type" : 'application/json',

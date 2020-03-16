@@ -3,6 +3,7 @@ import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} fr
 import { CirclePicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import APIURL from '../../helpers/environment';
 
 
 const CollectionAlbumEdit = (props) => {
@@ -12,7 +13,7 @@ const CollectionAlbumEdit = (props) => {
     const [editColor, setEditColor] = useState(props.albumUpdate.color);
 
     const collectionAlbumUpdate = () => {
-        fetch(`http://localhost:3001/album/collection/update/${props.albumUpdate.id}`, {
+        fetch(`${APIURL}/album/collection/update/${props.albumUpdate.id}`, {
             method: 'PUT',
             body: JSON.stringify({name: editName, artist: editArtist, year: editYear, color: editColor}),
             headers: new Headers({

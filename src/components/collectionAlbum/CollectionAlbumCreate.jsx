@@ -3,6 +3,7 @@ import {Button, Form, FormGroup, Label, Input, ModalBody, Modal, ModalHeader} fr
 import { CirclePicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import APIURL from '../../helpers/environment';
 
 const CollectionAlbumCreate = (props) => {
     const [name, setName] = useState('');
@@ -13,7 +14,7 @@ const CollectionAlbumCreate = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if (name && artist && year){
-            fetch("http://localhost:3001/album/collection/create", {
+            fetch(`${APIURL}/album/collection/create`, {
                 method: 'POST',
                 body: JSON.stringify({name: name, artist: artist, year: year, color: backgroundColor}),
                 headers: new Headers({

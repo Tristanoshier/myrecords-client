@@ -4,11 +4,12 @@ import { CirclePicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {faPencilAlt} from '@fortawesome/free-solid-svg-icons';
+import APIURL from '../../helpers/environment';
 
 
 const CollectionAlbumTable = (props) => {
     const deleteCollectionAlbum = (collectionAlbum) => {
-        fetch(`http://localhost:3001/album/collection/delete/${collectionAlbum.id}`, {
+        fetch(`${APIURL}/album/collection/delete/${collectionAlbum.id}`, {
             method: 'DELETE',
             headers: new Headers ({
                 'Content-Type' : 'application/json',

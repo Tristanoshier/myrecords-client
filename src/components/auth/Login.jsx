@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {Form, FormGroup, Input, Button, Container, Row, Col} from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faRecordVinyl } from '@fortawesome/free-solid-svg-icons';
+import APIURL from '../../helpers/environment';
 
 const Login = (props) => {
     const [email, setEmail] = useState('');
@@ -10,7 +11,7 @@ const Login = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
         if(email && password){
-            fetch("http://localhost:3001/user/login", {
+            fetch(`${APIURL}/user/login`, {
                 method: 'POST',
                 body: JSON.stringify({email: email, password: password}),
                 headers: new Headers({
