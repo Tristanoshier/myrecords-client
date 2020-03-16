@@ -106,12 +106,13 @@
     display: flex;
     flex-wrap: wrap;
     margin-top: 30px;
+    border: none;
     
   }
 
   .card-body {
     min-width: 225px;
-    background-color: black;
+    background-color: #0f0f0f;
     color: white;
   }
 
@@ -121,6 +122,10 @@
 
   .card-subtitle {
     color: #6c757d;
+  }
+
+  .card-margin {
+    margin-right: 10px;
   }
 
   .display-box {
@@ -162,6 +167,12 @@
 
   .logout-btn {
     margin-top: 32em;
+    background-color: #0f0f0f !important;
   }
+
+.modal-content {
+  background-color: #0f0f0f !important;
+  color: white;
+}
 
   

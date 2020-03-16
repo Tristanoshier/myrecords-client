@@ -16,7 +16,7 @@ const CollectionSearch = (props) => {
             props.setFilteredAlbums([])
         }else {
             let filtered = props.collectionAlbums.filter(album => {
-                if(album.name.toLowerCase().includes(result) || album.artist.toLowerCase().includes(result)){
+                if(album.name.toLowerCase().includes(result) || album.artist.toLowerCase().includes(result) || album.year.includes(result)){
                     return album 
                 }
             })

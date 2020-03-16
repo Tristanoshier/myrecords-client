@@ -24,7 +24,7 @@ const CollectionAlbumTable = (props) => {
         return albums.map((collectionAlbum, index) => {
             console.log(collectionAlbum)
             return (
-                <div key={index}>
+                <div className="card-margin" key={index}>
                 <Card>
                     <CardHeader style={{backgroundColor: collectionAlbum.color}} id="card-header"></CardHeader>
                     <CardBody>
