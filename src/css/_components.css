@@ -55,21 +55,24 @@
     margin-bottom: 1em;
   }
 
-  .input {
-    outline: none;
-  }
-
   .auth-form {
     padding: 90px;
     text-align: center;
   }
-  
+
   .form-control {
     color: #aaaaaa !important;
-    background-color: black !important;
     border: none !important;
     border-bottom: 2px solid white !important;
     border-radius: 0!important;
+  }
+
+  .auth-form-bg {
+    background-color: black !important;
+  }
+
+  .modal-form-bg {
+    background-color: #0f0f0f !important;
   }
 
  .btn-secondary {
@@ -130,7 +133,8 @@
 
   .display-box {
     height: 78vh;
-    overflow: scroll;
+    overflow-y: scroll;
+    overflow-y: auto;
     padding-left: 80px;
     padding-bottom: 40px;
     padding-top: 40px;
@@ -166,13 +170,28 @@
   }
 
   .logout-btn {
-    margin-top: 32em;
+    margin-top: 30em;
     background-color: #0f0f0f !important;
   }
 
 .modal-content {
   background-color: #0f0f0f !important;
   color: white;
+}
+
+.modal-btn {
+  background-color: #0f0f0f !important;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: rgb(201, 201, 201) !important;
+}
+
+#page-link {
+  font-size: 17px;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
   

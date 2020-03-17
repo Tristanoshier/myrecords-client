@@ -28,7 +28,7 @@ function App() {
   }
 
   const protectedViews = () => {
-    return(sessionToken === localStorage.getItem('token') ? 
+    return(sessionToken === localStorage.getItem('token') && sessionToken !== 'undefined' ? 
     <div>
         <Router>
           <Home clickLogout={clearToken} token={sessionToken}  />

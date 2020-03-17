@@ -38,21 +38,21 @@ const CollectionAlbumEdit = (props) => {
                 <Form onSubmit={collectionAlbumUpdate}>
                     <FormGroup>
                         <Label htmlFor="name">Name:</Label>
-                        <Input name="name" value={editName} onChange={e => setEditName(e.target.value)} />
+                        <Input className= "modal-form-bg" name="name" value={editName} onChange={e => setEditName(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="artist">Artist:</Label>
-                        <Input name="artist" value={editArtist} onChange={e => setEditArtist(e.target.value)} />
+                        <Input className= "modal-form-bg" name="artist" value={editArtist} onChange={e => setEditArtist(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="year">Year:</Label>
-                        <Input name="year" value={editYear} onChange={e => setEditYear(e.target.value)} />
+                        <Input className= "modal-form-bg" name="year" value={editYear} onChange={e => setEditYear(e.target.value)} />
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="color">Color:</Label>
                         <CirclePicker backgroundColor={props.backgroundColor} onChangeComplete={(color)=> setEditColor(color.hex)} />
                     </FormGroup>
-                    <Button type="submit">Update</Button>
+                    <Button className="modal-btn" type="submit">Update</Button>
                 </Form>
             </ModalBody>
         </Modal>

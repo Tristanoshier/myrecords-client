@@ -46,21 +46,21 @@ const CollectionAlbumCreate = (props) => {
             <Form onSubmit={handleSubmit} autoComplete="off">
                 <FormGroup>
                     <Label htmlFor="name">Name:</Label>
-                    <Input name="name" value={name} onChange={e => setName(e.target.value)} />
+                    <Input className= "modal-form-bg" name="name" value={name} onChange={e => setName(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="artist">Artist:</Label>
-                    <Input name="artist" value={artist} onChange={e => setArtist(e.target.value)} />
+                    <Input className= "modal-form-bg" name="artist" value={artist} onChange={e => setArtist(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="year">Year:</Label>
-                    <Input name="year" value={year} onChange={e => setYear(e.target.value)} />
+                    <Input className= "modal-form-bg" name="year" value={year} onChange={e => setYear(e.target.value)} />
                 </FormGroup>
                 <FormGroup>
                     <Label htmlFor="color">Color:</Label>
                     <CirclePicker backgroundColor={backgroundColor} onChangeComplete={(color)=> setBackgroundColor(color.hex)} />
                 </FormGroup>
-                <Button type="submit">Add</Button>
+                <Button className="modal-btn" type="submit">Add</Button>
             </Form>
             </ModalBody>
         </Modal>

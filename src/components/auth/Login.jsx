@@ -25,18 +25,18 @@ const Login = (props) => {
     }
 
     return (
-        <div>
+        <div className="overflow">
             <Container style={{margin: 0}}>
                 <Row>
                     <Col className="auth-left" md="6">
                     <h1 className="jumbo-title-login">MyRec{<FontAwesomeIcon size="xs" icon={faRecordVinyl}></FontAwesomeIcon>}rds</h1>
                         <Form className= "auth-form" onSubmit={handleSubmit} autoComplete="off">
                             <FormGroup>
-                                <Input onChange= {e => setEmail(e.target.value)} name= "email" value={email} placeholder="Email" />
+                                <Input className="auth-form-bg" onChange= {e => setEmail(e.target.value)} name= "email" value={email} placeholder="Email" />
                             </FormGroup>
                             <br />
                             <FormGroup>
-                                <Input type="password" onChange= {e => setPassword(e.target.value)} name= "password" value={password} placeholder="Password" />
+                                <Input className="auth-form-bg" type="password" onChange= {e => setPassword(e.target.value)} name= "password" value={password} placeholder="Password" />
                             </FormGroup>
                             <br />
                             <Button id ="auth-btn" type="submit">Login</Button>

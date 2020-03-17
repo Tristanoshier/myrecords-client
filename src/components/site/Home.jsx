@@ -3,7 +3,7 @@ import Sidebar from './Sidebar';
 
 const Home = (props) => {
     return (
-        <div>
+        <div className="overflow">
             <Sidebar token={props.token} clickLogout={props.clickLogout} />
         </div>
     )

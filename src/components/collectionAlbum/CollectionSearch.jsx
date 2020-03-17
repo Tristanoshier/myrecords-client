@@ -31,7 +31,7 @@ const CollectionSearch = (props) => {
                     <Col md="9">
                         <Form className="search-form" onSubmit={handleSubmit} id="form" autoComplete="off">
                             <FormGroup>
-                                <Input onChange={filterAlbums} id="search" type="text" placeholder="Search Albums" />
+                                <Input className="auth-form-bg" onChange={filterAlbums} id="search" type="text" placeholder="Search Albums" />
                             </FormGroup>
                         </Form>
                     </Col>

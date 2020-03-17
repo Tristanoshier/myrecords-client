@@ -28,26 +28,26 @@ const Signup = (props) => {
     }
 
     return (
-        <div>
+        <div className="overflow">
             <Container>
                 <Row>
                     <Col className="auth-left" md="6">
                     <h1 className="jumbo-title-signup">MyRec{<FontAwesomeIcon size="xs" icon={faRecordVinyl}></FontAwesomeIcon>}rds</h1>
                         <Form className="auth-form" onSubmit={handleSubmit} autoComplete="off">
                             <FormGroup>
-                                <Input onChange={e => setFirstname(e.target.value)} name="firstname" value={firstname} placeholder="First Name" />
+                                <Input className="auth-form-bg" onChange={e => setFirstname(e.target.value)} name="firstname" value={firstname} placeholder="First Name" />
                             </FormGroup>
                             <br />
                             <FormGroup>
-                                <Input onChange={e => setLastname(e.target.value)} name="lastname" value={lastname} placeholder="Last Name" />
+                                <Input className="auth-form-bg" onChange={e => setLastname(e.target.value)} name="lastname" value={lastname} placeholder="Last Name" />
                             </FormGroup>
                             <br />
                             <FormGroup>
-                                <Input onChange={e => setEmail(e.target.value)} name="email" value={email} placeholder="Email" />
+                                <Input className="auth-form-bg" onChange={e => setEmail(e.target.value)} name="email" value={email} placeholder="Email" />
                             </FormGroup>
                             <br />
                             <FormGroup>
-                                <Input onChange={e => setPassword(e.target.value)} name="password" value={password} placeholder="Password" />
+                                <Input className="auth-form-bg" onChange={e => setPassword(e.target.value)} name="password" value={password} placeholder="Password" />
                             </FormGroup>
                             <br />
                             <Button id= "auth-btn" type="submit">Signup</Button>
