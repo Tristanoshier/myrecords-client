@@ -1,9 +1,10 @@
 import React from 'react';
+import WishlistAlbumIndex from '../wishlistAlbum/WishlistAlbumIndex'
 
-const Wishlist = () => {
+const Wishlist = (props) => {
     return (
-        <div>
-            <h1 className="header">Wishlist</h1>
+        <div className="bg">
+            <WishlistAlbumIndex token={props.token} />
         </div>
     )
 }

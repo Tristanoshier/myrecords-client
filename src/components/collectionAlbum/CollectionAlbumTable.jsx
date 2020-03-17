@@ -1,6 +1,5 @@
 import React from 'react';
 import {Card, CardBody, CardTitle, CardSubtitle, CardDeck, CardHeader} from 'reactstrap';
-import { CirclePicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import {faPencilAlt} from '@fortawesome/free-solid-svg-icons';
@@ -23,7 +22,6 @@ const CollectionAlbumTable = (props) => {
         props.filteredAlbums.length === 0 ? albums = props.collectionAlbums : albums = props.filteredAlbums;
 
         return albums.map((collectionAlbum, index) => {
-            console.log(collectionAlbum)
             return (
                 <div className="card-margin" key={index}>
                 <Card>

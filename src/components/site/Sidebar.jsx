@@ -19,9 +19,9 @@ const SideBar = (props) => (
         </div>
         <div className= "sidebar-route">
             <Switch>
-                <Route exact path ="/"><Collection token = {props.token} /></Route>
+                <Route exact path ="/"><Collection token={props.token} /></Route>
                 <Route exact path="/collection"><Collection token={props.token} /></Route>
-                <Route exact path="/wishlist"><Wishlist  /></Route>
+                <Route exact path="/wishlist"><Wishlist token={props.token} /></Route>
             </Switch>
         </div>
        
