@@ -55,3 +55,20 @@
   .overflow{
     overflow: hidden;
   }
+
+  @media (max-width: 576px) {
+    .sidebar-list-styling {
+      width: 0;
+    }
+    .search-form-mobile {
+      padding-left: 0 !important;
+    }
+}
+
+@media (max-width: 320px) {
+   
+}
+
+@media (max-width : 768px) {
+    
+}

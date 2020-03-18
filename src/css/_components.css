@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-
   .modal-close {
    background: white;
    color: grey;
@@ -31,7 +30,7 @@
     margin-top: 20px;
     font-size: 100px;
     text-align: center;
-    margin-bottom: 2.5em;
+    margin-bottom: 2.2em;
   }
 
   .jumbo-title-signup {
@@ -52,7 +51,7 @@
     margin-top: 20px;
     font-size: 100px;
     text-align: center;
-    margin-bottom: 1em;
+    margin-bottom: .7em;
   }
 
   .auth-form {
@@ -192,6 +191,113 @@ a:hover {
   font-size: 17px;
   margin-top: 10px;
   margin-bottom: 15px;
+}
+
+@media (max-width: 1920px){
+  .text-on-mobile{
+    visibility: hidden;
+  }
+  .mobile-navbar {
+    width: 0;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 576px) {
+
+  .jumbo-title-login{
+    font-size: 60px;
+    margin-bottom: 5.6em;
+  }
+
+  .jumbo-title-signup{
+    font-size: 60px;
+    margin-bottom: 3em;
+  }
+  .bg-image{
+    display: none;
+  }
+  .auth-left{
+    height: 100vh;
+  }
+  .auth-form {
+    padding: 50px;
+  }
+  .search-form-bg {
+    width: 90% !important;
+  }
+  .text-on-mobile {
+    visibility: visible;
+  }
+  .main-header {
+    margin-left: 0;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .search-form {
+    margin-left: 30px;
+  }
+  .display-box{
+    height: 65vh;
+    padding-left: 35px;
+    padding-right: 25px;
+    padding-top: 0;
+  }
+  .add-btn {
+    margin-top: 5px;
+    margin-left: 46%;
+    margin-bottom: 10px;
+  }
+
+  .mobile-navbar {
+    visibility: visible;
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    z-index: 100;
+    background-color: #0f0f0f;
+  }
+
+  .mobile-navbar-list {
+    display: flex;
+  }
+
+  .mobile-link {
+    height: 50px;
+    width: 100%;
+  }
+
+  .mobile-item {
+    height: 50px;
+    width: 33%;
+  }
+  .mobile-item:last-of-type {
+    width: 34%;
+  }
+
+  .mobile-icon {
+    background-color: #0f0f0f;
+    color: #6c757d;
+    margin-top: 7px;
+  }
+
+  .icon-two{
+    margin-left: 20px;
+  }
+
+  .icon-three {
+    margin-left: 35px;
+  }
+  
+}
+
+@media (max-width: 320px) {
+  
+}
+
+@media (max-width : 768px) {
+  
 }
 
   

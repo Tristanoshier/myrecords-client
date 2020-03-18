@@ -10,9 +10,22 @@ const Signup = (props) => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
+    // const regexPatterns = {
+    //     regexEmail : /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})$/,
+    //     regexPassword : /^[\w@-]{6,20}$/
+    // }
+
+    // const validate = (field, regex) => {
+    //     if(regex.test(field.value)){
+    //         field.className = 'valid';
+    //     }else{
+    //         field.className = 'invalid';
+    //     }
+    // }
+
     let handleSubmit = (event) => {
         event.preventDefault();
-        if(firstname && lastname && email && password){
+        if(firstname && lastname){
             fetch(`${APIURL}/user/signup`, {
                 method: 'POST',
                 body: JSON.stringify({firstname: firstname, lastname: lastname, email: email, password: password}),
@@ -22,8 +35,10 @@ const Signup = (props) => {
             })
             .then(response => response.json())
             .then(data => props.updateToken(data.sessionToken))
-        }else{
-            alert('Please fill out all fields')
+        }
+        else{
+           alert("Please fill out all fields")
+        
         }
     }
 

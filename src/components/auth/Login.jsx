@@ -30,6 +30,7 @@ const Login = (props) => {
                 <Row>
                     <Col className="auth-left" md="6">
                     <h1 className="jumbo-title-login">MyRec{<FontAwesomeIcon size="xs" icon={faRecordVinyl}></FontAwesomeIcon>}rds</h1>
+                    <div className ="bg-on-mobile"></div>
                         <Form className= "auth-form" onSubmit={handleSubmit} autoComplete="off">
                             <FormGroup>
                                 <Input className="auth-form-bg" onChange= {e => setEmail(e.target.value)} name= "email" value={email} placeholder="Email" />
