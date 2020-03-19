@@ -1,177 +1,179 @@
 @import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
-  .modal-close {
-   background: white;
-   color: grey;
-   border: none;
-   margin-left: 325px;
-   font-weight: bolder;
-  }
 
-  .logo{
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
+.modal-close {
+  background: white;
+  color: grey;
+  border: none;
+  margin-left: 325px;
+  font-weight: bolder;
+}
 
-  .jumbo-title-login {
-    font-family: -apple-system, 
-    BlinkMacSystemFont, 
-    "Segoe UI", 
-    Roboto, 
+.logo {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.jumbo-title-login {
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     "Helvetica Neue",
-     Arial, 
-     "Noto Sans", 
-     sans-serif, 
-     "Apple Color Emoji", 
-     "Segoe UI Emoji", 
-     "Segoe UI Symbol", 
-     "Noto Color Emoji",
-     'Nunito', 
-     sans-serif;
-    margin-top: 20px;
-    font-size: 100px;
-    text-align: center;
-    margin-bottom: 2.2em;
-  }
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
+    'Nunito',
+    sans-serif;
+  margin-top: 20px;
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: 2.2em;
+}
 
-  .jumbo-title-signup {
-    font-family: -apple-system, 
-    BlinkMacSystemFont, 
-    "Segoe UI", 
-    Roboto, 
+.jumbo-title-signup {
+  font-family: -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
     "Helvetica Neue",
-     Arial, 
-     "Noto Sans", 
-     sans-serif, 
-     "Apple Color Emoji", 
-     "Segoe UI Emoji", 
-     "Segoe UI Symbol", 
-     "Noto Color Emoji",
-     'Nunito', 
-     sans-serif;
-    margin-top: 20px;
-    font-size: 100px;
-    text-align: center;
-    margin-bottom: .7em;
-  }
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
+    'Nunito',
+    sans-serif;
+  margin-top: 20px;
+  font-size: 100px;
+  text-align: center;
+  margin-bottom: .7em;
+}
 
-  .auth-form {
-    padding: 90px;
-    text-align: center;
-  }
+.auth-form {
+  padding: 90px;
+  text-align: center;
+}
 
-  .form-control {
-    color: #aaaaaa !important;
-    border: none !important;
-    border-bottom: 2px solid white !important;
-    border-radius: 0!important;
-  }
+.form-control {
+  color: #aaaaaa !important;
+  border: none !important;
+  border-bottom: 2px solid white !important;
+  border-radius: 0 !important;
+}
 
-  .auth-form-bg {
-    background-color: black !important;
-  }
+.auth-form-bg {
+  background-color: black !important;
+}
 
-  .modal-form-bg {
-    background-color: #0f0f0f !important;
-  }
+.modal-form-bg {
+  background-color: #0f0f0f !important;
+}
 
- .btn-secondary {
-   color: white !important;
-   background-color: black !important;
- }
+.btn-secondary {
+  color: white !important;
+  background-color: black !important;
+}
 
- #auth-btn {
-   padding-top: 7px;
-   padding-bottom: 7px;
-   padding-right: 20px;
-   padding-left: 20px;
- }
+#auth-btn {
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
 
- .auth-switch {
-   color: #6c757d;
- }
+.auth-switch {
+  color: #6c757d;
+}
 
- .main-header {
-   color: white;
-   font-size: 60px;
-   margin-left: 40px;
- }
+.main-header {
+  color: white;
+  font-size: 60px;
+  margin-left: 40px;
+}
 
- .search-form {
-   margin-left: 80px;
- }
+.search-form {
+  margin-left: 80px;
+}
 
-  #card-header{
-    padding: 30px;
-  }
+#card-header {
+  padding: 30px;
+}
 
-  .card-deck .card{
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 30px;
-    border: none;
-    
-  }
+.card-deck .card {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  border: none;
 
-  .card-body {
-    min-width: 225px;
-    background-color: #0f0f0f;
-    color: white;
-  }
+}
 
-  .card-title {
-    font-weight: bolder;
-  }
+.card-body {
+  min-width: 225px;
+  background-color: #0f0f0f;
+  color: white;
+}
 
-  .card-subtitle {
-    color: #6c757d;
-  }
+.card-title {
+  font-weight: bolder;
+}
 
-  .card-margin {
-    margin-right: 10px;
-  }
+.card-subtitle {
+  color: #6c757d;
+}
 
-  .display-box {
-    height: 78vh;
-    overflow-y: scroll;
-    overflow-y: auto;
-    padding-left: 80px;
-    padding-bottom: 40px;
-    padding-top: 40px;
-  }
+.card-margin {
+  margin-right: 10px;
+}
 
-  .delete-btn {
-    background-color: black;
-    color: white;
-    margin-left: 145px;
+.display-box {
+  height: 78vh;
+  overflow-y: scroll;
+  overflow-y: auto;
+  padding-left: 80px;
+  padding-bottom: 40px;
+  padding-top: 40px;
+}
 
-  }
-  .delete-btn:hover{
-    color: rgb(201, 201, 201);
-  }
+.delete-btn {
+  background-color: black;
+  color: white;
+  margin-left: 145px;
 
-  .update-btn {
-    background-color: black;
-    color: white;
-  }
+}
 
-  .update-btn:hover{
-    color: rgb(201, 201, 201);
-  }
+.delete-btn:hover {
+  color: rgb(201, 201, 201);
+}
 
-  .add-btn {
-    background-color: black;
-    color: white;
-    margin-top: 5px;
-  }
-  
-  .add-btn:hover {
-    color: rgb(201, 201, 201);
-  }
+.update-btn {
+  background-color: black;
+  color: white;
+}
 
-  .logout-btn {
-    margin-top: 30em;
-    background-color: #0f0f0f !important;
-  }
+.update-btn:hover {
+  color: rgb(201, 201, 201);
+}
+
+.add-btn {
+  background-color: black;
+  color: white;
+  margin-top: 5px;
+}
+
+.add-btn:hover {
+  color: rgb(201, 201, 201);
+}
+
+.logout-btn {
+  margin-top: 30em;
+  background-color: #0f0f0f !important;
+}
 
 .modal-content {
   background-color: #0f0f0f !important;
@@ -193,10 +195,11 @@ a:hover {
   margin-bottom: 15px;
 }
 
-@media (max-width: 1920px){
-  .text-on-mobile{
+@media (max-width: 1920px) {
+  .text-on-mobile {
     visibility: hidden;
   }
+
   .mobile-navbar {
     width: 0;
     visibility: hidden;
@@ -205,44 +208,53 @@ a:hover {
 
 @media (max-width: 576px) {
 
-  .jumbo-title-login{
+  .jumbo-title-login {
     font-size: 60px;
     margin-bottom: 5.6em;
   }
 
-  .jumbo-title-signup{
+  .jumbo-title-signup {
     font-size: 60px;
     margin-bottom: 3em;
   }
-  .bg-image{
+
+  .bg-image {
     display: none;
   }
-  .auth-left{
+
+  .auth-left {
     height: 100vh;
   }
+
   .auth-form {
     padding: 50px;
   }
+
   .search-form-bg {
     width: 90% !important;
   }
+
   .text-on-mobile {
     visibility: visible;
   }
+
   .main-header {
     margin-left: 0;
     text-align: center;
     margin-top: 10px;
   }
+
   .search-form {
     margin-left: 30px;
   }
-  .display-box{
+
+  .display-box {
     height: 65vh;
     padding-left: 35px;
     padding-right: 25px;
     padding-top: 0;
   }
+
   .add-btn {
     margin-top: 5px;
     margin-left: 46%;
@@ -272,6 +284,7 @@ a:hover {
     height: 50px;
     width: 33%;
   }
+
   .mobile-item:last-of-type {
     width: 34%;
   }
@@ -282,22 +295,16 @@ a:hover {
     margin-top: 7px;
   }
 
-  .icon-two{
+  .icon-two {
     margin-left: 20px;
   }
 
   .icon-three {
     margin-left: 35px;
   }
-  
+
 }
 
-@media (max-width: 320px) {
-  
-}
+@media (max-width: 320px) {}
 
-@media (max-width : 768px) {
-  
-}
-
-  
+@media (max-width : 768px) {}

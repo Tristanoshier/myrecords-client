@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Button, Form, FormGroup, Label, Input, ModalBody, Modal, ModalHeader} from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Form, FormGroup, Label, Input, ModalBody, Modal, ModalHeader } from 'reactstrap';
 import { CirclePicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -13,25 +13,25 @@ const CollectionAlbumCreate = (props) => {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (name && artist && year){
+        if (name && artist && year) {
             fetch(`${APIURL}/album/collection/create`, {
                 method: 'POST',
-                body: JSON.stringify({name: name, artist: artist, year: year, color: backgroundColor}),
+                body: JSON.stringify({ name: name, artist: artist, year: year, color: backgroundColor }),
                 headers: new Headers({
                     'Content-Type': 'application/json',
                     'Authorization': props.token
                 })
             }).then(res => res.json())
-            .then(() => {
-                setName('');
-                setArtist('');
-                setYear('');
-                props.fetchCollectionAlbums();
-                props.createOff();
-            })
-        }else {
+                .then(() => {
+                    setName('');
+                    setArtist('');
+                    setYear('');
+                    props.fetchCollectionAlbums();
+                    props.createOff();
+                })
+        } else {
             alert('Please fill out all fields')
-        }   
+        }
     }
 
     const closeCreateModal = () => {
@@ -40,30 +40,30 @@ const CollectionAlbumCreate = (props) => {
 
     return (
         <>
-        <Modal isOpen={true}>
-            <ModalHeader>Add Album<FontAwesomeIcon size="lg" icon={faTimes} className="modal-close update-btn" onClick={closeCreateModal} /></ModalHeader>
-            <ModalBody >
-            <Form onSubmit={handleSubmit} autoComplete="off">
-                <FormGroup>
-                    <Label htmlFor="name">Name:</Label>
-                    <Input className= "modal-form-bg" name="name" value={name} onChange={e => setName(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="artist">Artist:</Label>
-                    <Input className= "modal-form-bg" name="artist" value={artist} onChange={e => setArtist(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="year">Year:</Label>
-                    <Input className= "modal-form-bg" name="year" value={year} onChange={e => setYear(e.target.value)} />
-                </FormGroup>
-                <FormGroup>
-                    <Label htmlFor="color">Color:</Label>
-                    <CirclePicker backgroundColor={backgroundColor} onChangeComplete={(color)=> setBackgroundColor(color.hex)} />
-                </FormGroup>
-                <Button className="modal-btn" type="submit">Add</Button>
-            </Form>
-            </ModalBody>
-        </Modal>
+            <Modal isOpen={true}>
+                <ModalHeader>Add Album<FontAwesomeIcon size="lg" icon={faTimes} className="modal-close update-btn" onClick={closeCreateModal} /></ModalHeader>
+                <ModalBody >
+                    <Form onSubmit={handleSubmit} autoComplete="off">
+                        <FormGroup>
+                            <Label htmlFor="name">Name:</Label>
+                            <Input className="modal-form-bg" name="name" value={name} onChange={e => setName(e.target.value)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="artist">Artist:</Label>
+                            <Input className="modal-form-bg" name="artist" value={artist} onChange={e => setArtist(e.target.value)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="year">Year:</Label>
+                            <Input className="modal-form-bg" name="year" value={year} onChange={e => setYear(e.target.value)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="color">Color:</Label>
+                            <CirclePicker backgroundColor={backgroundColor} onChangeComplete={(color) => setBackgroundColor(color.hex)} />
+                        </FormGroup>
+                        <Button className="modal-btn" type="submit">Add</Button>
+                    </Form>
+                </ModalBody>
+            </Modal>
         </>
     )
 }

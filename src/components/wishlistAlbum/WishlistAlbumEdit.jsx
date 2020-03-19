@@ -1,5 +1,5 @@
-import React, {useState} from 'react';
-import {Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody} from 'reactstrap';
+import React, { useState } from 'react';
+import { Button, Form, FormGroup, Label, Input, Modal, ModalHeader, ModalBody } from 'reactstrap';
 import { CirclePicker } from 'react-color';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -15,7 +15,7 @@ const WishlistAlbumEdit = (props) => {
     const wishlistAlbumUpdate = () => {
         fetch(`${APIURL}/album/wishlist/update/${props.albumUpdate.id}`, {
             method: 'PUT',
-            body: JSON.stringify({name: editName, artist: editArtist, year: editYear, color: editColor}),
+            body: JSON.stringify({ name: editName, artist: editArtist, year: editYear, color: editColor }),
             headers: new Headers({
                 'Content-Type': 'application/json',
                 'Authorization': props.token
@@ -32,30 +32,30 @@ const WishlistAlbumEdit = (props) => {
 
     return (
         <>
-        <Modal isOpen={true}>
-            <ModalHeader>Edit Album<FontAwesomeIcon size="lg" icon={faTimes} className="modal-close update-btn" onClick={closeUpdateModal} /></ModalHeader>
-            <ModalBody >
-                <Form onSubmit={wishlistAlbumUpdate}>
-                    <FormGroup>
-                        <Label htmlFor="name">Name:</Label>
-                        <Input className= "modal-form-bg" name="name" value={editName} onChange={e => setEditName(e.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="artist">Artist:</Label>
-                        <Input className= "modal-form-bg" name="artist" value={editArtist} onChange={e => setEditArtist(e.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="year">Year:</Label>
-                        <Input className= "modal-form-bg" name="year" value={editYear} onChange={e => setEditYear(e.target.value)} />
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="color">Color:</Label>
-                        <CirclePicker backgroundColor={props.backgroundColor} onChangeComplete={(color)=> setEditColor(color.hex)} />
-                    </FormGroup>
-                    <Button className="modal-btn" type="submit">Update</Button>
-                </Form>
-            </ModalBody>
-        </Modal>
+            <Modal isOpen={true}>
+                <ModalHeader>Edit Album<FontAwesomeIcon size="lg" icon={faTimes} className="modal-close update-btn" onClick={closeUpdateModal} /></ModalHeader>
+                <ModalBody >
+                    <Form onSubmit={wishlistAlbumUpdate}>
+                        <FormGroup>
+                            <Label htmlFor="name">Name:</Label>
+                            <Input className="modal-form-bg" name="name" value={editName} onChange={e => setEditName(e.target.value)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="artist">Artist:</Label>
+                            <Input className="modal-form-bg" name="artist" value={editArtist} onChange={e => setEditArtist(e.target.value)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="year">Year:</Label>
+                            <Input className="modal-form-bg" name="year" value={editYear} onChange={e => setEditYear(e.target.value)} />
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="color">Color:</Label>
+                            <CirclePicker backgroundColor={props.backgroundColor} onChangeComplete={(color) => setEditColor(color.hex)} />
+                        </FormGroup>
+                        <Button className="modal-btn" type="submit">Update</Button>
+                    </Form>
+                </ModalBody>
+            </Modal>
         </>
     )
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import {Input, Form, FormGroup, Container, Col, Row, Button} from 'reactstrap';
+import { Input, Form, FormGroup, Container, Col, Row } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,12 +12,12 @@ const WishlistSearch = (props) => {
 
     const filterAlbums = () => {
         let result = document.getElementById('search').value.toLowerCase();
-        if (result === ''){
+        if (result === '') {
             props.setFilteredAlbums([])
-        }else {
+        } else {
             let filtered = props.wishlistAlbums.filter(album => {
-                if(album.name.toLowerCase().includes(result) || album.artist.toLowerCase().includes(result) || album.year.includes(result)){
-                    return album 
+                if (album.name.toLowerCase().includes(result) || album.artist.toLowerCase().includes(result) || album.year.includes(result)) {
+                    return album
                 }
             })
             props.setFilteredAlbums(filtered)
@@ -35,12 +35,12 @@ const WishlistSearch = (props) => {
                             </FormGroup>
                         </Form>
                     </Col>
-                    <Col md="3"> 
-                        <FontAwesomeIcon size="2x" className="add-btn" icon={faPlus} onClick={() => {props.editCreateWishlistAlbum(props.wishlistAlbum); props.createOn()}}/>    
+                    <Col md="3">
+                        <FontAwesomeIcon size="2x" className="add-btn" icon={faPlus} onClick={() => { props.editCreateWishlistAlbum(props.wishlistAlbum); props.createOn() }} />
                     </Col>
                 </Row>
             </Container>
-            
+
         </div>
     )
 }

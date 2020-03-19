@@ -1,5 +1,5 @@
-import React, {useState, useEffect} from 'react';
-import {Container, Row, Col} from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+import { Container, Row, Col } from 'reactstrap';
 import WishlistAlbumCreate from './WishlistAlbumCreate';
 import WishlistAlbumTable from './WishlistAlbumTable';
 import WishlistAlbumEdit from './WishlistAlbumEdit';
@@ -19,13 +19,13 @@ const WishlistAlbumIndex = (props) => {
         fetch(`${APIURL}/album/wishlist/find`, {
             method: 'GET',
             headers: new Headers({
-                "Content-Type" : 'application/json',
+                "Content-Type": 'application/json',
                 'Authorization': props.token
             })
         }).then(res => res.json())
-        .then((albumData) => {
-            setWishlistAlbums(albumData.wishlistAlbums)
-        })
+            .then((albumData) => {
+                setWishlistAlbums(albumData.wishlistAlbums)
+            })
     }
 
     const editUpdateWishlistAlbum = (wishlistAlbum) => {
@@ -44,10 +44,10 @@ const WishlistAlbumIndex = (props) => {
         setUpdateActive(false);
     }
 
-    const createOn =() => {
+    const createOn = () => {
         setCreateActive(true);
     }
-    
+
     const createOff = () => {
         setCreateActive(false)
     }
@@ -65,48 +65,48 @@ const WishlistAlbumIndex = (props) => {
                     <br />
                 </Col>
             </Row>
-            <br /> 
+            <br />
             <Row>
-                <Col md= "12">
-                    <WishlistSearch 
-                    editCreateWishlistAlbum={editCreateWishlistAlbum}
-                    createOn={createOn}
-                    setFilteredAlbums={setFilteredAlbums} 
-                    filteredAlbums={filteredAlbums} 
-                    setWishlistAlbums ={setWishlistAlbums} 
-                    wishlistAlbums={wishlistAlbums} 
-                    token={props.token}/>
+                <Col md="12">
+                    <WishlistSearch
+                        editCreateWishlistAlbum={editCreateWishlistAlbum}
+                        createOn={createOn}
+                        setFilteredAlbums={setFilteredAlbums}
+                        filteredAlbums={filteredAlbums}
+                        setWishlistAlbums={setWishlistAlbums}
+                        wishlistAlbums={wishlistAlbums}
+                        token={props.token} />
                 </Col>
-                {createActive ? 
-                <WishlistAlbumCreate 
-                backgroundColor={backgroundColor} 
-                setBackgroundColor={setBackgroundColor} 
-                albumCreate={albumCreate} 
-                createOff={createOff} 
-                fetchWishlistAlbums={fetchWishlistAlbums} 
-                token={props.token} /> 
-                : <></>}
+                {createActive ?
+                    <WishlistAlbumCreate
+                        backgroundColor={backgroundColor}
+                        setBackgroundColor={setBackgroundColor}
+                        albumCreate={albumCreate}
+                        createOff={createOff}
+                        fetchWishlistAlbums={fetchWishlistAlbums}
+                        token={props.token} />
+                    : <></>}
 
                 <Col md="12">
-                    <WishlistAlbumTable 
-                    backgroundColor={backgroundColor}
-                    setBackgroundColor={setBackgroundColor}
-                    wishlistAlbums={wishlistAlbums} 
-                    editUpdateWishlistAlbum={editUpdateWishlistAlbum} 
-                    updateOn={updateOn} 
-                    fetchWishlistAlbums={fetchWishlistAlbums}
-                    token={props.token}
-                    filteredAlbums={filteredAlbums} />
+                    <WishlistAlbumTable
+                        backgroundColor={backgroundColor}
+                        setBackgroundColor={setBackgroundColor}
+                        wishlistAlbums={wishlistAlbums}
+                        editUpdateWishlistAlbum={editUpdateWishlistAlbum}
+                        updateOn={updateOn}
+                        fetchWishlistAlbums={fetchWishlistAlbums}
+                        token={props.token}
+                        filteredAlbums={filteredAlbums} />
                 </Col>
                 {updateActive ?
-                <WishlistAlbumEdit 
-                backgroundColor={backgroundColor} 
-                setBackgroundColor={setBackgroundColor} 
-                albumUpdate={albumUpdate} 
-                updateOff={updateOff}
-                token={props.token} 
-                fetchWishlistAlbums={fetchWishlistAlbums} /> 
-                : <></>}
+                    <WishlistAlbumEdit
+                        backgroundColor={backgroundColor}
+                        setBackgroundColor={setBackgroundColor}
+                        albumUpdate={albumUpdate}
+                        updateOff={updateOff}
+                        token={props.token}
+                        fetchWishlistAlbums={fetchWishlistAlbums} />
+                    : <></>}
             </Row>
         </Container>
     )

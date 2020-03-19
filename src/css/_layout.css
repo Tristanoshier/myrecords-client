@@ -3,9 +3,11 @@
 #body {
   background-color: black;
 }
+
 .bg {
   background-color: black;
 }
+
 .bg-image {
   background: url(../assets/records2.jpeg) bottom;
   filter: saturate(130%);
@@ -25,50 +27,47 @@
   color: white;
   max-height: 100vh;
 }
-  
-  .sidebar {
-    display: flex;
-    margin-top: 0;
-  }
-  
-  ul {
-    list-style-type: none;
-  }
-  
+
+.sidebar {
+  display: flex;
+  margin-top: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.sidebar-list-styling {
+  width: 10%;
+  background-color: #0f0f0f;
+  color: white;
+  text-align: center;
+}
+
+.sidebar-list a {
+  color: white;
+  padding: 0;
+}
+
+.sidebar-route {
+  flex: 1;
+  padding: '00px';
+}
+
+.overflow {
+  overflow: hidden;
+}
+
+@media (max-width: 576px) {
   .sidebar-list-styling {
-    width: 10%;
-    background-color: #0f0f0f;
-    color: white;
-    text-align: center;
-  }
-  
-  .sidebar-list a {
-    color: white;
-    padding: 0;
-  }
-  
-  .sidebar-route {
-    flex: 1;
-    padding: '00px';
+    width: 0;
   }
 
-  .overflow{
-    overflow: hidden;
+  .search-form-mobile {
+    padding-left: 0 !important;
   }
-
-  @media (max-width: 576px) {
-    .sidebar-list-styling {
-      width: 0;
-    }
-    .search-form-mobile {
-      padding-left: 0 !important;
-    }
 }
 
-@media (max-width: 320px) {
-   
-}
+@media (max-width: 320px) {}
 
-@media (max-width : 768px) {
-    
-}
+@media (max-width : 768px) {}
