@@ -7,6 +7,7 @@ import APIURL from '../../helpers/environment';
 
 
 const WishlistAlbumTable = (props) => {
+    console.log(props)
     const deleteWishlistAlbum = (wishlistAlbum) => {
         fetch(`${APIURL}/album/wishlist/delete/${wishlistAlbum.id}`, {
             method: 'DELETE',
@@ -20,7 +21,9 @@ const WishlistAlbumTable = (props) => {
     const wishlistAlbumMapper = () => {
         let albums;
         props.filteredAlbums.length === 0 ? albums = props.wishlistAlbums : albums = props.filteredAlbums;
-
+        if(props.wishlistAlbums.length === 0){
+            break;
+        }else{
         return albums.map((wishlistAlbum, index) => {
             console.log(wishlistAlbum)
             return (
@@ -39,7 +42,9 @@ const WishlistAlbumTable = (props) => {
                 </div>
             )
         })
+        }
     }
+
     return (
         <div className= "card-deck display-box">
             <CardDeck>
