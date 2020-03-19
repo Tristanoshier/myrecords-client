@@ -211,11 +211,17 @@ a:hover {
   .jumbo-title-login {
     font-size: 60px;
     margin-bottom: 5.6em;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+    border-image-slice: 1;
   }
 
   .jumbo-title-signup {
     font-size: 60px;
     margin-bottom: 3em;
+    border-bottom: 5px solid;
+    border-image: linear-gradient(to right, red, orange, yellow, green, blue, purple);
+    border-image-slice: 1;
   }
 
   .bg-image {
