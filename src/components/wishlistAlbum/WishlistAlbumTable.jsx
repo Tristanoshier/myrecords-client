@@ -22,7 +22,7 @@ const WishlistAlbumTable = (props) => {
         let albums;
         props.filteredAlbums.length === 0 ? albums = props.wishlistAlbums : albums = props.filteredAlbums;
         if(props.wishlistAlbums.length === 0){
-            break;
+            console.log("no albums exist")
         }else{
         return albums.map((wishlistAlbum, index) => {
             console.log(wishlistAlbum)
