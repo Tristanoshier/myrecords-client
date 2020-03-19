@@ -317,4 +317,8 @@ a:hover {
     border-radius: 0;
   }
 
+  .modal-close {
+    margin-left: 185px;
+  }
+
 }
