@@ -19,7 +19,7 @@ const SideBar = (props) => (
             </ul>
         </div>
 
-        {/*MOBILE SIDEBAR */}
+        {/*MOBILE NAVBAR */}
         <div className="mobile-navbar overflow">
             <ul className="mobile-navbar-list">
                 <li className="mobile-item">

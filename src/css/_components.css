@@ -303,8 +303,18 @@ a:hover {
     margin-left: 35px;
   }
 
+  .logout-btn {
+    visibility: hidden;
+  }
+
+  .card-deck .card {
+    max-height: 150px;
+  }
+
+  #card-header {
+    padding-right: 30px;
+    padding-bottom: 119px; /* width of card header */
+    border-radius: 0;
+  }
+
 }
-
-@media (max-width: 320px) {}
-
-@media (max-width : 768px) {}
