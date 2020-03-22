@@ -323,3 +323,9 @@ a:hover {
   }
 
 }
+
+@media (max-width: 414px) {
+  .card-body {
+    max-width: 254.5px;
+  }
+}
