@@ -309,13 +309,18 @@ a:hover {
   }
 
   .card-deck .card {
-    max-height: 150px;
+    max-height: 200px;
   }
 
   #card-header {
     padding-right: 30px;
-    padding-bottom: 119px; /* width of card header */
+    padding-bottom: 169px; /* width of card header */
     border-radius: 0;
+    max-width: 200px;
+  }
+
+  .card-body{
+    min-height: 200px !important;
   }
 
   .modal-close {
@@ -326,6 +331,12 @@ a:hover {
 
 @media (max-width: 414px) {
   .card-body {
-    max-width: 254.5px;
+    max-width: 283.5px;
+  }
+}
+
+@media (max-width: 375px) {
+  .card-body {
+    max-width: 250px;
   }
 }
