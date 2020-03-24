@@ -145,8 +145,7 @@
   background-color: black;
   color: white;
   margin-left: 145px;
-  position: absolute;
-  bottom: 15px;
+
 }
 
 .delete-btn:hover {
@@ -156,8 +155,7 @@
 .update-btn {
   background-color: #0f0f0f;
   color: white;
-  position: absolute;
-  bottom: 15px;
+ 
 }
 
 .update-btn:hover {
@@ -362,6 +360,16 @@ a:hover {
     margin-left: 0;
     text-align: center;
     font-size: 18px;
+  }
+
+  .update-btn {
+    position: absolute;
+    bottom: 15px;
+  }
+
+  .delete-btn{
+    position: absolute;
+    bottom: 15px;
   }
 }
 
