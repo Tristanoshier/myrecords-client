@@ -52,6 +52,16 @@ const CollectionAlbumIndex = (props) => {
         setCreateActive(false)
     }
 
+    const displayNoAlbumsMessage = () => {
+        if(collectionAlbums.length < 1){
+            return 'You have 0 albums. Click the plus below to add an album!'
+        }else if(collectionAlbums.length === 1) {
+            return `You have ${collectionAlbums.length} album in your collection.`
+        }else {
+            return `You have ${collectionAlbums.length} albums in your collection.`
+        }
+    }
+
     useEffect(() => {
         fetchCollectionAlbums();
     }, []);
@@ -62,6 +72,7 @@ const CollectionAlbumIndex = (props) => {
                 <Col md="12">
                     <h1 className="main-header">Collection</h1>
                     <hr />
+                    <h5 className="no-albums-message">{displayNoAlbumsMessage()}</h5>
                     <br />
                 </Col>
             </Row>

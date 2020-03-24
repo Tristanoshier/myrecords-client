@@ -52,6 +52,16 @@ const WishlistAlbumIndex = (props) => {
         setCreateActive(false)
     }
 
+    const displayNoAlbumsMessage = () => {
+        if(wishlistAlbums.length < 1){
+            return 'You have 0 albums. Click the plus below to add an album!'
+        }else if(wishlistAlbums.length === 1) {
+            return `You have ${wishlistAlbums.length} album in your wishlist.`
+        }else {
+            return `You have ${wishlistAlbums.length} albums in your wishlist.`
+        }
+    }
+
     useEffect(() => {
         fetchWishlistAlbums();
     }, []);
@@ -62,6 +72,7 @@ const WishlistAlbumIndex = (props) => {
                 <Col md="12">
                     <h1 className="main-header">Wishlist</h1>
                     <hr />
+                    <h5 className="no-albums-message">{displayNoAlbumsMessage()}</h5>
                     <br />
                 </Col>
             </Row>
