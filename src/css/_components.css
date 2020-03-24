@@ -145,7 +145,8 @@
   background-color: black;
   color: white;
   margin-left: 145px;
-
+  position: absolute;
+  bottom: 15px;
 }
 
 .delete-btn:hover {
@@ -155,6 +156,8 @@
 .update-btn {
   background-color: #0f0f0f;
   color: white;
+  position: absolute;
+  bottom: 15px;
 }
 
 .update-btn:hover {
@@ -211,6 +214,7 @@ a:hover {
 
 .no-albums-message {
   margin-left: 40px;
+  color: #6c757d;
 }
 
 @media (max-width: 1920px) {
@@ -353,7 +357,7 @@ a:hover {
   .modal-close {
     margin-left: 205px;
   }
-  
+
   .no-albums-message {
     margin-left: 0;
     text-align: center;
