@@ -31,7 +31,7 @@
   margin-top: 20px;
   font-size: 100px;
   text-align: center;
-  margin-bottom: 2.2em;
+  margin-bottom: .4em;
 }
 
 .jumbo-title-signup {
@@ -52,7 +52,7 @@
   margin-top: 20px;
   font-size: 100px;
   text-align: center;
-  margin-bottom: .7em;
+  margin-bottom: .4em;
 }
 
 .auth-form {
@@ -196,6 +196,19 @@ a:hover {
   margin-bottom: 15px;
 }
 
+.about-login {
+  color: #6c757d;
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 10.2em;
+}
+
+.about-signup {
+  color: #6c757d;
+  text-align: center;
+  font-size: 16px;
+}
+
 @media (max-width: 1920px) {
   .text-on-mobile {
     visibility: hidden;
@@ -211,12 +224,22 @@ a:hover {
 
   .jumbo-title-login {
     font-size: 60px;
-    margin-bottom: 5.6em;
+    margin-bottom: .4em;
   }
 
   .jumbo-title-signup {
     font-size: 60px;
-    margin-bottom: 3em;
+    margin-bottom: .4em;
+  }
+
+  .about-login {
+    font-size: 15px;
+    margin-bottom: 18em;
+  }
+  
+  .about-signup {
+    font-size: 15px;
+    margin-bottom: 7.5em;
   }
 
   .bg-image {
@@ -338,5 +361,27 @@ a:hover {
 @media (max-width: 375px) {
   .card-body {
     max-width: 250px;
+  }
+
+  .about-login {
+    font-size: 15px;
+    margin-bottom: 15em;
+  }
+  
+  .about-signup {
+    font-size: 15px;
+    margin-bottom: 4.5em;
+  }
+}
+
+@media(max-width: 320px){
+  .about-login {
+    font-size: 15px;
+    margin-bottom: 0;
+  }
+  
+  .about-signup {
+    font-size: 15px;
+    margin-bottom: 0;
   }
 }

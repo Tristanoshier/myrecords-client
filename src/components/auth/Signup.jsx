@@ -39,6 +39,7 @@ const Signup = (props) => {
                 <Row>
                     <Col className="auth-left" md="6">
                         <h1 className="jumbo-title-signup">MyRec{<FontAwesomeIcon size="xs" icon={faRecordVinyl}></FontAwesomeIcon>}rds</h1>
+                        <h5 className="about-signup">-Keep track of your vinyl collection on the go-</h5>
                         <Form className="auth-form" onSubmit={handleSubmit} autoComplete="off">
                             <FormGroup>
                                 <Input className="auth-form-bg" onChange={e => setFirstname(e.target.value)} name="firstname" value={firstname} placeholder="First Name" />

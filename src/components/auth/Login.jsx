@@ -40,6 +40,7 @@ const Login = (props) => {
                 <Row>
                     <Col className="auth-left" md="6">
                         <h1 className="jumbo-title-login">MyRec{<FontAwesomeIcon size="xs" icon={faRecordVinyl}></FontAwesomeIcon>}rds</h1>
+                        <h5 className="about-login">-Keep track of your vinyl collection on the go-</h5>
                         <div className="bg-on-mobile"></div>
                         <Form className="auth-form" onSubmit={handleSubmit} autoComplete="off">
                             <FormGroup>
